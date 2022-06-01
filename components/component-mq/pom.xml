@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion> <!-- POM模型版本 -->
 
-    <artifactId>mulin-components-mq</artifactId>  <!-- 项目名称 -->
+    <artifactId>component-mq</artifactId>  <!-- 项目名称 -->
     <packaging>jar</packaging> <!-- 项目的最终打包类型/发布形式, 可选[jar, war, pom, maven-plugin]等 -->
     <version>${isys.version}</version> <!-- 项目当前版本号 -->
 
@@ -62,7 +62,16 @@
                 </includes><!-- maven可以将mapper.xml进行打包处理，否则仅对java文件处理 -->
             </resource>
         </resources>
-
     </build>
+
+<!--    </build>-->
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

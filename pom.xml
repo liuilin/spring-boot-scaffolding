@@ -8,9 +8,13 @@
     <artifactId>spring-boot-scaffolding</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>components</module>
+        <module>common</module>
+        <module>z-code-gen</module>
     </modules>
+
     <properties>
         <!--项目编译版本-->
         <java.encoding>UTF-8</java.encoding>
@@ -214,11 +218,11 @@
                 <version>${lombok.version}</version>
             </dependency>
             <!--快速扫描指定包路径下的类的库-->
-            <dependency>
-                <groupId>io.github.classgraph</groupId>
-                <artifactId>classgraph</artifactId>
-                <version>${classgraph.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.github.classgraph</groupId>-->
+<!--                <artifactId>classgraph</artifactId>-->
+<!--                <version>${classgraph.version}</version>-->
+<!--            </dependency>-->
             <!--获取java类参数信息的库-->
             <dependency>
                 <groupId>com.thoughtworks.paranamer</groupId>
@@ -260,12 +264,12 @@
                 <version>3.0.2</version>
             </dependency>
             <!--Junit 5-->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.junit.jupiter</groupId>-->
+<!--                <artifactId>junit-jupiter</artifactId>-->
+<!--                <version>${junit-jupiter.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
             <!--gmrfid-third所依赖的包begin-->
             <dependency>
                 <groupId>redis.clients</groupId>
