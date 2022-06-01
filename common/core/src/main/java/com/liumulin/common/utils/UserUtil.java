@@ -17,13 +17,10 @@ public class UserUtil {
     public static final String KEY_LANG = "lang";
     public static final String KEY_USER = "user";
     private final static ThreadLocal<User> tlUser = new ThreadLocal<>();
-    private final static ThreadLocal<Locale> tlLocale = new ThreadLocal<Locale>() {
-        @Override
-        protected Locale initialValue() {
-            // 语言的默认值
-            return Locale.CHINESE;
-        }
-    };
+    private final static ThreadLocal<Locale> tlLocale = ThreadLocal.withInitial(() -> {
+        // 语言的默认值
+        return Locale.CHINESE;
+    });
 
     /**
      * 如果没有登录，返回null

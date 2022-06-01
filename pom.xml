@@ -45,6 +45,7 @@
         <okhttp.version>4.5.0</okhttp.version>
         <redisson.version>3.13.2</redisson.version>
         <springfox.version>3.0.0</springfox.version>
+        <knife4j.version>3.0.2</knife4j.version>
         <easyexcel.version>3.0.4</easyexcel.version>
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
@@ -218,11 +219,11 @@
                 <version>${lombok.version}</version>
             </dependency>
             <!--快速扫描指定包路径下的类的库-->
-<!--            <dependency>-->
-<!--                <groupId>io.github.classgraph</groupId>-->
-<!--                <artifactId>classgraph</artifactId>-->
-<!--                <version>${classgraph.version}</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.github.classgraph</groupId>-->
+            <!--                <artifactId>classgraph</artifactId>-->
+            <!--                <version>${classgraph.version}</version>-->
+            <!--            </dependency>-->
             <!--获取java类参数信息的库-->
             <dependency>
                 <groupId>com.thoughtworks.paranamer</groupId>
@@ -255,21 +256,21 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
-                <version>3.0.0</version>
+                <version>${springfox.version}</version>
             </dependency>
             <!--整合Knife4j-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>3.0.2</version>
+                <version>${knife4j.version}</version>
             </dependency>
             <!--Junit 5-->
-<!--            <dependency>-->
-<!--                <groupId>org.junit.jupiter</groupId>-->
-<!--                <artifactId>junit-jupiter</artifactId>-->
-<!--                <version>${junit-jupiter.version}</version>-->
-<!--                <scope>test</scope>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.junit.jupiter</groupId>-->
+            <!--                <artifactId>junit-jupiter</artifactId>-->
+            <!--                <version>${junit-jupiter.version}</version>-->
+            <!--                <scope>test</scope>-->
+            <!--            </dependency>-->
             <!--gmrfid-third所依赖的包begin-->
             <dependency>
                 <groupId>redis.clients</groupId>
@@ -305,11 +306,6 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-boot-starter</artifactId>
-                <version>${springfox.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>

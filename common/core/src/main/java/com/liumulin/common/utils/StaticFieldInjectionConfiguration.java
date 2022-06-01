@@ -12,8 +12,8 @@ import javax.annotation.PostConstruct;
  *
  * @author liuqiang
  */
-@Component
 @Slf4j
+@Component
 public class StaticFieldInjectionConfiguration {
 
     @Autowired

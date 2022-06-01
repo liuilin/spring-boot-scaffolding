@@ -2,10 +2,10 @@ spring:
   profiles:
     include: db
     # swagger
-springfox:
-  documentation:
-    swagger:
-      v2:
-        enabled: true
-knife4j:
-  enable: true
+#springfox:
+#  documentation:
+#    swagger:
+#      v2:
+#        enabled: true
+#knife4j:
+#  enable: true

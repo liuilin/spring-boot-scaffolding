@@ -21,8 +21,8 @@ import java.util.Map;
  * @Description TODO
  * @Date 2020/12/27 0027
  */
-@Configuration
 @Slf4j
+@Configuration
 public class DruidConfig {
 
     @Value("${spring.datasource.druid.url}")
@@ -35,7 +35,7 @@ public class DruidConfig {
      * @return
      */
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource.druid")
     public DataSource druid() {
         log.info("db url: {}", dbUrl);
         return new DruidDataSource();
@@ -56,7 +56,7 @@ public class DruidConfig {
 
         //属性见：com.alibaba.druid.support.http.ResourceServlet
         initParameters.put("loginUsername", "admin");
-        initParameters.put("loginPassword", "123456");
+        initParameters.put("loginPassword", "root");
         initParameters.put("allow", "");
         initParameters.put("deny", "");
         bean.setInitParameters(initParameters);

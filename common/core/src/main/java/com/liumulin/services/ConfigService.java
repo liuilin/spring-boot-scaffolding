@@ -33,10 +33,6 @@ public class ConfigService {
         // 校验通过后打印重要的日志
         log.info("getAll start ...");
         log.info("getAll end, data size:{}", 0);
-        Config entity = new Config();
-        entity.setId(1);
-        entity.setName("hh");
-        configMapper.insert(entity);
         return null;
     }
 
