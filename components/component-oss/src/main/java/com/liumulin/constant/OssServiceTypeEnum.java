@@ -1,4 +1,4 @@
-package com.jeequan.jeepay.components.oss.constant;
+package com.liumulin.constant;
 
 import lombok.Getter;
 

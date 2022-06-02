@@ -53,6 +53,10 @@ public class CommonResult<T> implements Serializable, IErrorMsg {
         this.data = data;
     }
 
+    public static <T> CommonResult<T> ok(T data) {
+        return new CommonResult<>(data);
+    }
+
     public CommonResult(Throwable e) {
         super();
         this.msg = e.toString();

@@ -49,6 +49,7 @@
         <easyexcel.version>3.0.4</easyexcel.version>
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
+        <hutool.version>5.8.2</hutool.version>
 
     </properties>
 
@@ -310,7 +311,7 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.5.8</version>
+                <version>${hutool.version}</version>
             </dependency>
             <!--gmrfid-third所依赖的包end-->
 

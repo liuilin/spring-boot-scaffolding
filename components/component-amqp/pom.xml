@@ -13,6 +13,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
     <!-- 项目依赖声明 -->
     <dependencies>
         <!--        &lt;!&ndash; 依赖Core项目  &ndash;&gt;-->

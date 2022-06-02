@@ -1,6 +1,6 @@
-package com.jeequan.jeepay.components.oss.model;
+package com.liumulin.model;
 
-import com.jeequan.jeepay.components.oss.constant.OssSavePlaceEnum;
+import com.liumulin.constant.OssSavePlaceEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;

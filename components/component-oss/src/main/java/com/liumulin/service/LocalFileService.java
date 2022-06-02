@@ -1,8 +1,7 @@
-package com.jeequan.jeepay.components.oss.service;
+package com.liumulin.service;
 
-import com.jeequan.jeepay.components.oss.config.OssYmlConfig;
-import com.jeequan.jeepay.components.oss.constant.OssSavePlaceEnum;
-import com.jeequan.jeepay.core.service.ISysConfigService;
+import com.liumulin.config.OssYmlConfig;
+import com.liumulin.constant.OssSavePlaceEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -22,8 +21,8 @@ import java.io.File;
 @ConditionalOnProperty(name = "isys.oss.service-type", havingValue = "local")
 public class LocalFileService implements IOssService {
 
-    @Autowired
-    private ISysConfigService sysConfigService;
+    //    @Autowired
+//    private ISysConfigService sysConfigService;
     @Autowired
     private OssYmlConfig ossYmlConfig;
 
@@ -52,7 +51,8 @@ public class LocalFileService implements IOssService {
             return saveDirAndFileName;
         }
 
-        return sysConfigService.getDBApplicationConfig().getOssPublicSiteUrl() + "/" + saveDirAndFileName;
+//        return sysConfigService.getDBApplicationConfig().getOssPublicSiteUrl() + "/" + saveDirAndFileName;
+        return null;
     }
 
     @Override

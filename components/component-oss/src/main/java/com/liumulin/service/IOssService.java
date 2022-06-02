@@ -1,6 +1,6 @@
-package com.jeequan.jeepay.components.oss.service;
+package com.liumulin.service;
 
-import com.jeequan.jeepay.components.oss.constant.OssSavePlaceEnum;
+import com.liumulin.constant.OssSavePlaceEnum;
 import org.springframework.web.multipart.MultipartFile;
 
 /**

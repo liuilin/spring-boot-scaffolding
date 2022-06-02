@@ -1,10 +1,10 @@
-package com.jeequan.jeepay.components.oss.service;
+package com.liumulin.service;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.model.GetObjectRequest;
-import com.jeequan.jeepay.components.oss.config.AliyunOssYmlConfig;
-import com.jeequan.jeepay.components.oss.constant.OssSavePlaceEnum;
+import com.liumulin.config.AliyunOssYmlConfig;
+import com.liumulin.constant.OssSavePlaceEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
