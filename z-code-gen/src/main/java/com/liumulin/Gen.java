@@ -10,13 +10,13 @@ import java.io.File;
  * @since 2022-06-01
  */
 public class Gen {
-    public static final String THIS_MODULE_NAME = "z-code-gen"; //当前项目名称
+    public static final String THIS_MODULE_NAME = "z-code-gen"; // 当前项目模块名称
     public static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "123456";
     public static final String AUTHOR = "Daniel Liu";
     public static final String[] TABLES = {"user_info", "config"};
-    private static String projectPath = System.getProperty("user.dir");  //获取当前项目的 文件夹地址
+    private static String projectPath = System.getProperty("user.dir");  // 获取当前项目的工作目录
 
     public static void main(String[] args) {
 //        System.out.println(System.getProperty("line.separator"));
