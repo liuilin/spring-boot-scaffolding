@@ -1,7 +1,7 @@
 package com.jeequan.jeepay.components.mq.vender.activemq.receive;
 
-import com.jeequan.jeepay.components.mq.model.ResetAppConfigMQ;
 import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
+import com.jeequan.jeepay.components.mq.model.ResetAppConfigMQ;
 import com.jeequan.jeepay.components.mq.vender.IMQMsgReceiver;
 import com.jeequan.jeepay.components.mq.vender.activemq.ActiveMQConfig;
 import org.springframework.beans.factory.annotation.Autowired;

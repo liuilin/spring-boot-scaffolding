@@ -2,7 +2,7 @@ package com.liumulin.ctrl;
 
 import cn.hutool.core.lang.UUID;
 import com.liumulin.common.beans.CommonResult;
-import com.liumulin.common.exceptions.BaseException;
+import com.liumulin.common.exceptions.CustomException;
 import com.liumulin.common.exceptions.ServiceException;
 import com.liumulin.common.exceptions.SystemErrorType;
 import com.liumulin.common.utils.FileUtil;
@@ -12,8 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.rmi.ServerException;
 
 /*
  * 统一文件上传接口（ossFile）
@@ -35,7 +33,7 @@ public class OssFileController {
 
         if (file == null) {
 //            return ApiRes.fail(ApiCodeEnum.SYSTEM_ERROR, "选择文件不存在");
-            throw new BaseException(SystemErrorType.UPLOAD_FILE_SIZE_LIMIT);
+            throw new CustomException(SystemErrorType.UPLOAD_FILE_SIZE_LIMIT);
         }
         try {
 
@@ -50,7 +48,7 @@ public class OssFileController {
             String fileSuffix = FileUtil.getFileSuffix(file.getOriginalFilename(), false);
             if (!ossFileConfig.isAllowFileSuffix(fileSuffix)) {
 //                throw new BizException("上传文件格式不支持！");
-                throw new BaseException("上传文件格式不支持！");
+                throw new CustomException("上传文件格式不支持！");
             }
 
             // 3. 判断文件大小是否超限
@@ -70,7 +68,7 @@ public class OssFileController {
         } catch (Exception e) {
             log.error("upload error, fileName = {}", file.getOriginalFilename(), e);
 //            throw new BizException(ApiCodeEnum.SYSTEM_ERROR);
-            throw new BaseException(SystemErrorType.SYSTEM_ERROR);
+            throw new CustomException(SystemErrorType.SYSTEM_ERROR);
         }
     }
 

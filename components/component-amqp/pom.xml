@@ -53,6 +53,15 @@
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
 <!--        &lt;!&ndash; ↑↑↑↑↑↑ MQ依赖包 ↑↑↑↑↑↑ &ndash;&gt;-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <!--fastjson2-->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

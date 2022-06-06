@@ -22,7 +22,7 @@ public abstract class ControllerAOP {
         long startTime = System.currentTimeMillis();
 
         try {
-            Object result = (CommonResult<?>) pjp.proceed();
+            Object result = pjp.proceed();
 
             // 如果需要打印入参，可以从这里取出打印
             // Object[] args = pjp.getArgs();

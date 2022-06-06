@@ -1,8 +1,8 @@
 package com.jeequan.jeepay.components.mq.vender.activemq;
 
 import com.jeequan.jeepay.components.mq.constant.MQSendTypeEnum;
-import com.jeequan.jeepay.components.mq.model.AbstractMQ;
 import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
+import com.jeequan.jeepay.components.mq.model.AbstractMQ;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.print.attribute.standard.Destination;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

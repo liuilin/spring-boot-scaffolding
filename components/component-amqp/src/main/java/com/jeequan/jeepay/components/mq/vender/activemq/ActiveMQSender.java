@@ -1,7 +1,7 @@
 package com.jeequan.jeepay.components.mq.vender.activemq;
 
-import com.jeequan.jeepay.components.mq.model.AbstractMQ;
 import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
+import com.jeequan.jeepay.components.mq.model.AbstractMQ;
 import com.jeequan.jeepay.components.mq.vender.IMQSender;
 import org.apache.activemq.ScheduledMessage;
 import org.springframework.beans.factory.annotation.Autowired;

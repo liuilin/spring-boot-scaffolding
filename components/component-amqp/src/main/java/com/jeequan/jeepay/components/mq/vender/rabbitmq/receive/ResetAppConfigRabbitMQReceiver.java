@@ -1,8 +1,8 @@
 package com.jeequan.jeepay.components.mq.vender.rabbitmq.receive;
 
+import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
 import com.jeequan.jeepay.components.mq.model.ResetAppConfigMQ;
 import com.jeequan.jeepay.components.mq.vender.IMQMsgReceiver;
-import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
 import com.jeequan.jeepay.components.mq.vender.rabbitmq.RabbitMQConfig;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;

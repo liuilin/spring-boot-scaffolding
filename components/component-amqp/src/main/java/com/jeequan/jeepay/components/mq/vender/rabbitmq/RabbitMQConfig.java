@@ -87,12 +87,10 @@ public class RabbitMQConfig {
                 );
 
             } else {
-
                 // 延迟交换机与Queue进行绑定， 绑定Bean名称 = mqName_DelayedBind
                 rabbitMQBeanProcessor.beanDefinitionRegistry.registerBeanDefinition(amq.getMQName() + "_DelayedBind",
                         BeanDefinitionBuilder.genericBeanDefinition(Binding.class, () ->
                                 BindingBuilder.bind(SpringBeansUtil.getBean(amq.getMQName(), Queue.class)).to(delayedExchange).with(amq.getMQName()).noargs()
-
                         ).getBeanDefinition()
                 );
             }

@@ -1,9 +1,9 @@
 package com.jeequan.jeepay.components.mq.vender.rabbitmq.receive;
 
+import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
 import com.jeequan.jeepay.components.mq.executor.MqThreadExecutor;
 import com.jeequan.jeepay.components.mq.model.PayOrderMchNotifyMQ;
 import com.jeequan.jeepay.components.mq.vender.IMQMsgReceiver;
-import com.jeequan.jeepay.components.mq.constant.MQVenderCS;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

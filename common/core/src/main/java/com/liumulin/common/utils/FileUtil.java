@@ -1,6 +1,6 @@
 package com.liumulin.common.utils;
 
-import com.liumulin.common.exceptions.BaseException;
+import com.liumulin.common.exceptions.CustomException;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -77,6 +77,6 @@ public class FileUtil {
 //            return suffix;
 //        }
 //        throw new BizException("不支持的图片类型");
-        throw new BaseException("不支持的图片类型");
+        throw new CustomException("不支持的图片类型");
     }
 }
