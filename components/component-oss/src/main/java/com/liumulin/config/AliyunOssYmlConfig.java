@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
-* aliyun oss 的yml配置参数
+ * aliyun oss 的 yml 配置参数
 */
 @Data
 @Component

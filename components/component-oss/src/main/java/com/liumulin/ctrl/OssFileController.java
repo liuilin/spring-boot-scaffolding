@@ -1,11 +1,11 @@
 package com.liumulin.ctrl;
 
 import cn.hutool.core.lang.UUID;
-import com.liumulin.common.beans.CommonResult;
-import com.liumulin.common.exceptions.CustomException;
-import com.liumulin.common.exceptions.ServiceException;
-import com.liumulin.common.exceptions.SystemErrorType;
-import com.liumulin.common.utils.FileUtil;
+import com.liumulin.beans.CommonResult;
+import com.liumulin.exceptions.CustomException;
+import com.liumulin.exceptions.ServiceException;
+import com.liumulin.temp.SystemErrorType;
+import com.liumulin.utils.FileUtil;
 import com.liumulin.model.OssFileConfig;
 import com.liumulin.service.IOssService;
 import lombok.extern.slf4j.Slf4j;

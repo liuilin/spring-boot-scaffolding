@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>spring-boot-scaffolding</artifactId>
         <groupId>com.liumulin</groupId>
+        <artifactId>common</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.liumulin</groupId>
-    <artifactId>core</artifactId>
+    <artifactId>web</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
