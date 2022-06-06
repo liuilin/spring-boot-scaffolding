@@ -1,10 +1,14 @@
 package com.liumulin;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
+import com.baomidou.mybatisplus.generator.config.querys.MySqlQuery;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.baomidou.mybatisplus.generator.keywords.MySqlKeyWordsHandler;
 
 import java.io.File;
 
@@ -25,13 +29,23 @@ public class MyBatisPlusGenerator {
 //        System.out.println(System.getProperty("line.separator"));
 //        String os = System.getProperty("os.name").toLowerCase();
 //        System.out.println("os = " + os);
-        FastAutoGenerator.create(DB_URL, USERNAME, PASSWORD)
+        FastAutoGenerator.create(MyBatisPlusGenerator.initDataSourceConfig())
                 .globalConfig(builder -> initGlobalConfig(builder))
                 .packageConfig(builder -> initPackageConfig(builder))
                 .strategyConfig(builder -> initStrategyConfig(builder))
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
 
+    }
+
+    private static DataSourceConfig.Builder initDataSourceConfig() {
+        return new DataSourceConfig.Builder(DB_URL, USERNAME, PASSWORD)
+                .dbQuery(new MySqlQuery())
+                .schema("mybatis")
+                .typeConvert(new MySqlTypeConvert(){
+
+                })
+                .keyWordsHandler(new MySqlKeyWordsHandler());
     }
 
     /**
