@@ -28,7 +28,7 @@ import java.nio.file.AccessDeniedException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    private final String applicationName;
+//    private final String applicationName;
 
 //    private final ApiErrorLogFrameworkService apiErrorLogFrameworkService;
 
@@ -85,7 +85,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = MissingServletRequestParameterException.class)
     public CommonResult<?> missingServletRequestParameterExceptionHandler(MissingServletRequestParameterException ex) {
         log.warn("[missingServletRequestParameterExceptionHandler]", ex);
-        return CommonResult.error(CommonResultCode.BAD_REQUEST.getCode(), String.format("请求参数缺失:%s", ex.getParameterName()));
+        return CommonResult.error(CommonResultCode.BAD_REQUEST.getCode(), String.format("请求参数缺失，请检查参数:%s", ex.getParameterName()));
     }
 
     /**
@@ -206,7 +206,21 @@ public class GlobalExceptionHandler {
         // 插入异常日志
 //        this.createExceptionLog(req, ex);
         // 返回 ERROR CommonResult
-        return CommonResult.error(CommonResultCode.INTERNAL_SERVER_ERROR.getCode(), CommonResultCode.INTERNAL_SERVER_ERROR.getMessage());
+        return CommonResult.error(CommonResultCode.INTERNAL_SERVER_ERROR);
+    }
+    /**
+     * 处理系统异常，兜底处理所有的一切
+     */
+    @ExceptionHandler(value = CustomException.class)
+    public CommonResult<?> cusEx(CustomException ex) {
+        log.error("[defaultExceptionHandler]", ex);
+        return CommonResult.error(ex.getResultCode());
+        // 插入异常日志
+//        this.createExceptionLog(req, ex);
+        // 返回 ERROR CommonResult
+        //记录日志
+//        LOGGER.error("catch exception:{}", e.getMessage(), e);
+//        return CommonResult.error(c);
     }
 
 //    private void createExceptionLog(HttpServletRequest req, Throwable e) {

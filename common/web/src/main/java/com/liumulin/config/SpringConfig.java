@@ -1,6 +1,5 @@
-package config;
+package com.liumulin.config;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -9,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
  * @Date 2020/12/27 0027
  */
 @Configuration
-@MapperScan("daos")
-public class MyBatisConfig {
+public class SpringConfig {
 
 }

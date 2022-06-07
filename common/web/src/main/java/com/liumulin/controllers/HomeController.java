@@ -1,7 +1,9 @@
-package controllers;
+package com.liumulin.controllers;
 
-import com.liumulin.common.beans.CommonResult;
-import com.liumulin.common.utils.UserUtil;
+import com.liumulin.beans.CommonResult;
+import com.liumulin.exceptions.CommonResultCode;
+import com.liumulin.exceptions.CustomException;
+import com.liumulin.utils.UserUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -66,7 +68,24 @@ public class HomeController {
     @GetMapping(value = "/aoptest")
     @ResponseBody
     public CommonResult<Boolean> aoptest() {
-        int a = 1 / 0;
-        return new CommonResult<>(true);
+        throw new CustomException(CommonResultCode.INTERNAL_SERVER_ERROR);
+//        int a = 1 / 0;
+//        return new CommonResult<>(true);
     }
+
+    /**
+     * AOP测试，AOP会拦截错误并返回包装类
+     */
+    @GetMapping(value = "/aoptest1")
+    @ResponseBody
+    public CommonResult<Boolean> aoptest1(@RequestBody Form body) {
+        throw new CustomException(CommonResultCode.INTERNAL_SERVER_ERROR);
+//        int a = 1 / 0;
+//        return new CommonResult<>(true);
+    }
+
+}
+
+class Form {
+    String id;
 }

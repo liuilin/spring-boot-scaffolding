@@ -21,7 +21,7 @@ public interface LogConst {
     /**
      * 对象类型
      */
-    String ITEM_TYPE_CONFIG = "config";
+    String ITEM_TYPE_CONFIG = "com.liumulin.config";
 
 
 }

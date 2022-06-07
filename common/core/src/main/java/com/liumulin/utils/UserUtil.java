@@ -2,7 +2,6 @@ package com.liumulin.utils;
 
 
 import com.liumulin.temp.NoLoginException;
-import entity.User;
 import org.slf4j.MDC;
 
 import java.util.Locale;

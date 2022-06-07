@@ -10,6 +10,6 @@ public interface ResultCode {
     /**
      * 提示信息
      */
-    String getMessage();
+    String getMsg();
 
 }

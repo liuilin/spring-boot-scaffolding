@@ -1,9 +1,9 @@
-//package com.liumulin.common.aop;
+//package com.liumulin.aop;
 //
-//import com.liumulin.common.beans.CommonResult;
-//import com.liumulin.common.temp.NoLoginException;
-//import com.liumulin.common.temp.CheckException;
-//import com.liumulin.common.temp.NoPermissionException;
+//import com.liumulin.beans.CommonResult;
+//import com.liumulin.exceptions.ResultCode;
+//import com.liumulin.temp.CheckException;
+//import com.liumulin.temp.NoLoginException;
 //import lombok.extern.slf4j.Slf4j;
 //import org.aspectj.lang.ProceedingJoinPoint;
 //import org.aspectj.lang.annotation.Around;
@@ -33,39 +33,39 @@
 //
 //            return result;
 //        } catch (Throwable e) {
-////            return handlerException(pjp, e);
+//            return handlerException(pjp, e);
 //            return null;
 //        }
 //    }
 //
-////    private IErrorMsg handlerException(ProceedingJoinPoint pjp, Throwable ex) {
-////        IErrorMsg result = this.createResult();
-////
-////        // 已知异常【注意：已知异常不要打印堆栈，否则会干扰日志】
-////        // 校验出错，参数非法
-////        if (ex instanceof CheckException || ex instanceof IllegalArgumentException) {
-////            result.setMsg(ex.getLocalizedMessage());
-////            result.setCode(CommonResult.CHECK_FAIL);
-////        }
-////        // 没有登陆
-////        else if (ex instanceof NoLoginException) {
-////            result.setMsg("Unlogin");
-////            result.setCode(CommonResult.NO_LOGIN);
-////        }
-////        // 没有权限
-////        else if (ex instanceof NoPermissionException) {
-////            result.setMsg("NO PERMISSION");
-////            result.setCode(CommonResult.NO_PERMISSION);
-////        } else {
-////            log.error(pjp.getSignature() + " error ", ex);
-////
-////            // TODO 未知的异常，应该格外注意，可以发送邮件通知等
-////            result.setMsg(ex.toString());
-////            result.setCode(CommonResult.UNKNOWN_EXCEPTION);
-////        }
-////
-////        return result;
-////    }
+//    private IErrorMsg handlerException(ProceedingJoinPoint pjp, Throwable ex) {
+//        IErrorMsg result = this.createResult();
 //
-//    protected abstract IErrorMsg createResult();
+//        // 已知异常【注意：已知异常不要打印堆栈，否则会干扰日志】
+//        // 校验出错，参数非法
+//        if (ex instanceof CheckException || ex instanceof IllegalArgumentException) {
+//            result.setMsg(ex.getLocalizedMessage());
+//            result.setCode(CommonResult.CHECK_FAIL);
+//        }
+//        // 没有登陆
+//        else if (ex instanceof NoLoginException) {
+//            result.setMsg("Unlogin");
+//            result.setCode(CommonResult.NO_LOGIN);
+//        }
+//        // 没有权限
+//        else if (ex instanceof NoPermissionException) {
+//            result.setMsg("NO PERMISSION");
+//            result.setCode(CommonResult.NO_PERMISSION);
+//        } else {
+//            log.error(pjp.getSignature() + " error ", ex);
+//
+//            // TODO 未知的异常，应该格外注意，可以发送邮件通知等
+//            result.setMsg(ex.toString());
+//            result.setCode(CommonResult.UNKNOWN_EXCEPTION);
+//        }
+//
+//        return result;
+//    }
+//
+//    protected abstract ResultCode createResult();
 //}

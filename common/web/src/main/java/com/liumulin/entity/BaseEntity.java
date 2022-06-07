@@ -1,4 +1,4 @@
-package entity;
+package com.liumulin.entity;
 
 import lombok.Data;
 

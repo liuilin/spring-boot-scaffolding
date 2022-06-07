@@ -2,7 +2,7 @@
 //
 //import com.alibaba.fastjson2.JSON;
 //import com.liumulin.utils.UserUtil;
-//import entity.User;
+//import com.liumulin.entity.User;
 //
 //import javax.servlet.*;
 //import javax.servlet.http.Cookie;

@@ -33,7 +33,7 @@ public class OssFileController {
 
         if (file == null) {
 //            return ApiRes.fail(ApiCodeEnum.SYSTEM_ERROR, "选择文件不存在");
-            throw new CustomException(SystemErrorType.UPLOAD_FILE_SIZE_LIMIT);
+//            throw new CustomException(SystemErrorType.UPLOAD_FILE_SIZE_LIMIT);
         }
         try {
 

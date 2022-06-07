@@ -1,4 +1,4 @@
-package config;
+package com.liumulin.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.Executor;
@@ -44,8 +44,8 @@ public class MyBatisUpdateInterceptor implements Interceptor {
 ////        if (commandType.equals(SqlCommandType.INSERT)) {
 ////            if (parameter instanceof BaseEntity) {
 ////                // 4. 实体类
-////                BaseEntity entity = (BaseEntity) parameter;
-////                entity.setCreator(999);
+////                BaseEntity com.liumulin.entity = (BaseEntity) parameter;
+////                com.liumulin.entity.setCreator(999);
 ////            }
 ////        }
 //

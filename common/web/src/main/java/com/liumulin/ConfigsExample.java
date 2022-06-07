@@ -1,3 +1,5 @@
+package com.liumulin;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -584,7 +586,7 @@ public class ConfigsExample {
     }
 
     public static class Criterion {
-        private String condition;
+        private final String condition;
 
         private Object value;
 
@@ -598,7 +600,7 @@ public class ConfigsExample {
 
         private boolean listValue;
 
-        private String typeHandler;
+        private final String typeHandler;
 
         protected Criterion(String condition) {
             super();

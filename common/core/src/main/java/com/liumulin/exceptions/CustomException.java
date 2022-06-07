@@ -19,31 +19,33 @@ public class CustomException extends RuntimeException {
     /**
      * 异常对应的错误类型
      */
-    private final CommonResultCode commonResultCode;
+    private final ResultCode resultCode;
 
     /**
      * 默认是系统异常
      */
-    public CustomException() {
-        this.commonResultCode = CommonResultCode.SERVER_ERROR;
-    }
+//    public CustomException() {
+//        this.resultCode = CommonResultCode.SERVER_ERROR;
+//    }
 
-    public CustomException(CommonResultCode commonResultCode) {
-        this.commonResultCode = commonResultCode;
+    public CustomException(ResultCode resultCode) {
+        //异常信息为：错误代码+异常信息
+        super("错误代码：" + resultCode.getCode() + ";异常信息：" + resultCode.getMsg());
+        this.resultCode = resultCode;
     }
 
     public CustomException(String message) {
         super(message);
-        this.commonResultCode = null;
+        this.resultCode = null;
     }
 
-    public CustomException(CommonResultCode commonResultCode, String message) {
-        super(message);
-        this.commonResultCode = commonResultCode;
-    }
-
-    public CustomException(CommonResultCode commonResultCode, String message, Throwable cause) {
-        super(message, cause);
-        this.commonResultCode = commonResultCode;
-    }
+//    public CustomException(ResultCode resultCode, String message) {
+//        super(message);
+//        this.resultCode = resultCode;
+//    }
+//
+//    public CustomException(ResultCode resultCode, String message, Throwable cause) {
+//        super(message, cause);
+//        this.resultCode = resultCode;
+//    }
 }

@@ -1,7 +1,7 @@
 package com.liumulin.beans;
 
-import com.liumulin.aop.IErrorMsg;
 import com.liumulin.exceptions.CommonResultCode;
+import com.liumulin.exceptions.ResultCode;
 import lombok.Data;
 import org.springframework.util.Assert;
 
@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author liuqiang
  */
 @Data
-public class CommonResult<T> implements Serializable, IErrorMsg {
+public class CommonResult<T> implements Serializable {
 
     //    public static final int NO_LOGIN = -1;
 //    public static final int SUCCESS = 0;
@@ -28,7 +28,7 @@ public class CommonResult<T> implements Serializable, IErrorMsg {
     /**
      * 返回的信息(主要出错的时候使用)
      */
-    private String msg = "success";
+    private String msg;
 
     /**
      * 返回的数据
@@ -49,12 +49,12 @@ public class CommonResult<T> implements Serializable, IErrorMsg {
         CommonResult<T> result = new CommonResult<>();
         result.code = CommonResultCode.SUCCESS.getCode();
         result.data = data;
-        result.msg = "";
+        result.msg = "success";
         return result;
     }
 
     public static <T> CommonResult<T> error(Integer code, String message) {
-        Assert.isTrue(!Objects.equals(CommonResultCode.SUCCESS.getCode(), code), "code 必须是错误的！");
+        Assert.isTrue(!Objects.equals(CommonResultCode.SUCCESS.getCode(), code), "code 必须是错误码！");
         CommonResult<T> result = new CommonResult<>();
         result.code = code;
         result.msg = message;
@@ -74,7 +74,7 @@ public class CommonResult<T> implements Serializable, IErrorMsg {
         return error(result.getCode(), result.getMsg());
     }
 
-    public static <T> CommonResult<T> error(CommonResultCode code) {
-        return error(code.getCode(), code.getMessage());
+    public static <T> CommonResult<T> error(ResultCode code) {
+        return error(code.getCode(), code.getMsg());
     }
 }

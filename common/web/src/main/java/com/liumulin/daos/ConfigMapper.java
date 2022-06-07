@@ -1,7 +1,7 @@
-package daos;
+package com.liumulin.daos;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import entity.Config;
+import com.liumulin.entity.Config;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

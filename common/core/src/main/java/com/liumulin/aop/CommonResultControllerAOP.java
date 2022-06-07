@@ -1,6 +1,6 @@
-//package com.liumulin.common.aop;
+//package com.liumulin.aop;
 //
-//import com.liumulin.common.beans.CommonResult;
+//import com.liumulin.exceptions.ResultCode;
 //import org.aspectj.lang.annotation.Aspect;
 //import org.aspectj.lang.annotation.Pointcut;
 //import org.springframework.stereotype.Component;
@@ -15,12 +15,13 @@
 //public class CommonResultControllerAOP extends ControllerAOP {
 //
 //    @Override
-//    @Pointcut("execution(public com.liumulin.common.beans.CommonResult *(..)))")
+//    @Pointcut("execution(public com.liumulin.beans.CommonResult *(..)))")
 //    public void targetMethod() {
 //    }
 //
 //    @Override
-//    protected IErrorMsg createResult() {
-//        return new CommonResult<>();
+//    protected ResultCode createResult() {
+////        return new CommonResult();
+//        return null;
 //    }
 //}

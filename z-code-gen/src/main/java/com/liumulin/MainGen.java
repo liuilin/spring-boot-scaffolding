@@ -2,11 +2,11 @@
 //
 //
 //import com.baomidou.mybatisplus.generator.AutoGenerator;
-//import com.baomidou.mybatisplus.generator.config.*;
-//import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
-//import com.baomidou.mybatisplus.generator.config.rules.DateType;
-//import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
-//import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+//import com.baomidou.mybatisplus.generator.com.liumulin.config.*;
+//import com.baomidou.mybatisplus.generator.com.liumulin.config.converts.MySqlTypeConvert;
+//import com.baomidou.mybatisplus.generator.com.liumulin.config.rules.DateType;
+//import com.baomidou.mybatisplus.generator.com.liumulin.config.rules.DbColumnType;
+//import com.baomidou.mybatisplus.generator.com.liumulin.config.rules.NamingStrategy;
 //
 //import java.io.File;
 //
@@ -78,7 +78,7 @@
 //        PackageConfig pc = new PackageConfig();
 //        pc.setParent("com.liumulin");  //根目录
 //        pc.setModuleName("sys");
-//        pc.setEntity("entity");   //实体目录
+//        pc.setEntity("com.liumulin.entity");   //实体目录
 //        pc.setService("service");  //service目录
 //        pc.setServiceImpl("service.impl");  //serviceImpl 目录
 ////        pc.setMapper("service.mapper"); //Mapper接口目录

@@ -22,7 +22,7 @@ public class MyBatisPlusGenerator {
     public static final String USERNAME = "root";
     public static final String PASSWORD = "123456";
     public static final String AUTHOR = "Daniel Liu";
-    public static final String[] TABLES = {"user_info", "config"};
+    public static final String[] TABLES = {"user_info", "xxx"};
     private static String projectPath = System.getProperty("user.dir");  // 获取当前项目的工作目录
 
     public static void main(String[] args) {
@@ -65,7 +65,7 @@ public class MyBatisPlusGenerator {
     private static void initPackageConfig(PackageConfig.Builder builder) {
         builder.parent("com.liumulin") // 设置父包名
 //                            .moduleName("") // 设置父包模块名
-                .entity("entity")
+                .entity("com.liumulin.entity")
                 .controller("controller")
                 .service("service")
                 .serviceImpl("service.impl")

@@ -47,7 +47,7 @@ public enum CommonResultCode implements ResultCode {
     }
 
     @Override
-    public String getMessage() {
+    public String getMsg() {
         return message;
     }
 }
