@@ -30,7 +30,7 @@ public class CustomException extends RuntimeException {
 
     public CustomException(ResultCode resultCode) {
         //异常信息为：错误代码+异常信息
-        super("错误代码：" + resultCode.getCode() + ";异常信息：" + resultCode.getMsg());
+        super("错误代码：" + resultCode.getCode() + "；异常信息：" + resultCode.getMsg());
         this.resultCode = resultCode;
     }
 

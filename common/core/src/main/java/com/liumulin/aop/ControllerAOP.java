@@ -3,38 +3,41 @@ package com.liumulin.aop;
 import com.liumulin.beans.CommonResult;
 import com.liumulin.exceptions.CommonResultCode;
 import com.liumulin.exceptions.CustomException;
-import com.liumulin.exceptions.ResultCode;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /**
  * 处理和包装异常
  *
  * @author liuqiang
  */
-@Slf4j
+//@Slf4j
+@Aspect
+@Component
+@Order(-99)
 public abstract class ControllerAOP {
-    protected abstract void targetMethod();
+    @Pointcut("execution(public com.liumulin.beans.CommonResult *(..))")
+    public void controllerMethod() {
+    }
 
-    @Around("targetMethod()")
+    @Around("controllerMethod()")
     public Object handlerControllerMethod(ProceedingJoinPoint pjp) {
         long startTime = System.currentTimeMillis();
 
+        CommonResult<?> result;
+
         try {
-            Object result = pjp.proceed();
-
-            // 如果需要打印入参，可以从这里取出打印
-            // Object[] args = pjp.getArgs();
-
-            // 本次操作用时（毫秒）
-            long elapsedTime = System.currentTimeMillis() - startTime;
-            log.info("[{}]use time: {}", pjp.getSignature(), elapsedTime);
-
-            return result;
+            result = (CommonResult<?>) pjp.proceed();
+//            log.info(pjp.getSignature() + "use time:" + (System.currentTimeMillis() - startTime));
         } catch (Throwable e) {
-            return handlerException(pjp, e);
+            result = handlerException(pjp, e);
         }
+
+        return result;
     }
 
 //    private IErrorMsg handlerException(ProceedingJoinPoint pjp, Throwable ex) {
@@ -66,19 +69,20 @@ public abstract class ControllerAOP {
 //        return result;
 //    }
 
-    private ResultCode handlerException(ProceedingJoinPoint pjp, Throwable ex) {
-        ResultCode result = this.createResult();
+    private CommonResult<?> handlerException(ProceedingJoinPoint pjp, Throwable ex) {
+        CommonResult result = new CommonResult<>();
 
         // 已知异常【注意：已知异常不要打印堆栈，否则会干扰日志】
         // 校验出错，参数非法
         if (ex instanceof CustomException) {
 //            result.setMsg(ex.getLocalizedMessage());
 //            result.setCode(CommonResult.CHECK_FAIL);
-            result = CommonResultCode.BAD_REQUEST;
+            result = new CommonResult<>(CommonResultCode.BAD_REQUEST);
+        }else {
+            result = new CommonResult(CommonResultCode.SERVER_ERROR);
         }
 
         return result;
     }
 
-    protected abstract ResultCode createResult();
 }

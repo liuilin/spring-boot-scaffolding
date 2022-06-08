@@ -38,11 +38,11 @@ public enum CommonResultCode implements ResultCode {
     //操作代码
     final int code;
     //提示信息
-    final String message;
+    final String msg;
 
-    CommonResultCode(int code, String message) {
+    CommonResultCode(int code, String msg) {
         this.code = code;
-        this.message = message;
+        this.msg = msg;
     }
 
     @Override
@@ -52,6 +52,6 @@ public enum CommonResultCode implements ResultCode {
 
     @Override
     public String getMsg() {
-        return message;
+        return msg;
     }
 }
