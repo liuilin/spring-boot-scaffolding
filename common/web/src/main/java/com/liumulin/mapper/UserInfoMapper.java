@@ -12,7 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @author Daniel Liu
  * @since 2022-06-07
  */
-@Mapper
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
 }

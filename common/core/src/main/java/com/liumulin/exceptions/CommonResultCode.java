@@ -19,6 +19,10 @@ public enum CommonResultCode implements ResultCode {
 
 
 
+    CONNECT_ERROR(430, "数据库连接异常"),
+
+
+
     // ========== 服务端错误段 ==========
 
     INTERNAL_SERVER_ERROR(500, "系统异常"),

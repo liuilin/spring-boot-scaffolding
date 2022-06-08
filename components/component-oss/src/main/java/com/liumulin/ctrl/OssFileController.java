@@ -2,6 +2,7 @@ package com.liumulin.ctrl;
 
 import cn.hutool.core.lang.UUID;
 import com.liumulin.beans.CommonResult;
+import com.liumulin.exceptions.CommonResultCode;
 import com.liumulin.exceptions.CustomException;
 import com.liumulin.exceptions.ServiceException;
 import com.liumulin.temp.SystemErrorType;
@@ -68,7 +69,7 @@ public class OssFileController {
         } catch (Exception e) {
             log.error("upload error, fileName = {}", file.getOriginalFilename(), e);
 //            throw new BizException(ApiCodeEnum.SYSTEM_ERROR);
-            throw new CustomException(SystemErrorType.SYSTEM_ERROR);
+            throw new CustomException(CommonResultCode.SERVER_ERROR);
         }
     }
 

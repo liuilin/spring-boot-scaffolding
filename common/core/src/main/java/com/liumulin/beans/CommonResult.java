@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author liuqiang
  */
 @Data
-public class CommonResult<T> implements Serializable {
+public class CommonResult<T> implements Serializable, ResultCode {
 
     //    public static final int NO_LOGIN = -1;
 //    public static final int SUCCESS = 0;
